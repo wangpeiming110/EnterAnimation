@@ -14,8 +14,8 @@ public class AnimCaChu extends Anim {
 
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
-        float rectTop =  (view.getHeight() - view.getHeight() * rate);
-        canvas.clipRect(0, rectTop, view.getWidth(), view.getHeight());
+        float rectTop =  (h - h * rate);
+        canvas.clipRect(0, rectTop, w, h);
 
         canvas.save();
     }

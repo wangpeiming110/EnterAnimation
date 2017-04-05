@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
  * Created by wpm on 2017/4/1.
  */
 
-public class AnimLayout extends FrameLayout {
+public class EnterAnimLayout extends FrameLayout {
     private Anim anim ;
     private long startTime = 0;//开始时间
     private boolean mIsAnimaionRun = false;
@@ -18,17 +18,17 @@ public class AnimLayout extends FrameLayout {
     }
 
 
-    public AnimLayout(Context context) {
+    public EnterAnimLayout(Context context) {
         super(context);
         initialize();
     }
 
-    public AnimLayout(Context context, AttributeSet attrs) {
+    public EnterAnimLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
 
-    public AnimLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public EnterAnimLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialize();
     }

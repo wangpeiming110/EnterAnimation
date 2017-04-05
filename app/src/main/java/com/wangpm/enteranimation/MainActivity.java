@@ -9,25 +9,30 @@ import anim.AnimBaiYeChuang;
 import anim.AnimCaChu;
 import anim.AnimHeZhuang;
 import anim.AnimJieTi;
-import anim.AnimLayout;
+import anim.AnimLunZi;
+import anim.AnimPiLie;
+import anim.AnimQiPan;
+import anim.AnimShanXingZhanKai;
+import anim.EnterAnimLayout;
+import anim.AnimLingXing;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private AnimLayout animLayout;
+    private EnterAnimLayout enterAnimLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        animLayout = (AnimLayout)  findViewById(R.id.anim_layout);
-        animLayout.setAnim(new AnimBaiYeChuang(animLayout));
+        enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                animLayout.startAnimation();
+                enterAnimLayout.setAnim(new AnimBaiYeChuang(enterAnimLayout));
+                enterAnimLayout.startAnimation();
             }
         }, 1000);
 
@@ -35,26 +40,51 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn_cachu).setOnClickListener(this);
         findViewById(R.id.btn_hezhuang).setOnClickListener(this);
         findViewById(R.id.btn_jieti).setOnClickListener(this);
+        findViewById(R.id.btn_lingxing).setOnClickListener(this);
+        findViewById(R.id.btn_lunzi).setOnClickListener(this);
+        findViewById(R.id.btn_pilie).setOnClickListener(this);
+        findViewById(R.id.btn_qipan).setOnClickListener(this);
+        findViewById(R.id.btn_shanxingzhankai).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_baiyechuang:
-                animLayout.setAnim(new AnimBaiYeChuang(animLayout));
-                animLayout.startAnimation();
+                enterAnimLayout.setAnim(new AnimBaiYeChuang(enterAnimLayout));
+                enterAnimLayout.startAnimation();
                 break;
             case R.id.btn_cachu:
-                animLayout.setAnim(new AnimCaChu(animLayout));
-                animLayout.startAnimation();
+                enterAnimLayout.setAnim(new AnimCaChu(enterAnimLayout));
+                enterAnimLayout.startAnimation();
                 break;
             case R.id.btn_hezhuang:
-                animLayout.setAnim(new AnimHeZhuang(animLayout));
-                animLayout.startAnimation();
+                enterAnimLayout.setAnim(new AnimHeZhuang(enterAnimLayout));
+                enterAnimLayout.startAnimation();
                 break;
             case R.id.btn_jieti:
-                animLayout.setAnim(new AnimJieTi(animLayout));
-                animLayout.startAnimation();
+                enterAnimLayout.setAnim(new AnimJieTi(enterAnimLayout));
+                enterAnimLayout.startAnimation();
+                break;
+            case R.id.btn_lingxing:
+                enterAnimLayout.setAnim(new AnimLingXing(enterAnimLayout));
+                enterAnimLayout.startAnimation();
+                break;
+            case R.id.btn_lunzi:
+                enterAnimLayout.setAnim(new AnimLunZi(enterAnimLayout));
+                enterAnimLayout.startAnimation();
+                break;
+            case R.id.btn_pilie:
+                enterAnimLayout.setAnim(new AnimPiLie(enterAnimLayout));
+                enterAnimLayout.startAnimation();
+                break;
+            case R.id.btn_qipan:
+                enterAnimLayout.setAnim(new AnimQiPan(enterAnimLayout));
+                enterAnimLayout.startAnimation();
+                break;
+            case R.id.btn_shanxingzhankai:
+                enterAnimLayout.setAnim(new AnimShanXingZhanKai(enterAnimLayout));
+                enterAnimLayout.startAnimation();
                 break;
         }
     }

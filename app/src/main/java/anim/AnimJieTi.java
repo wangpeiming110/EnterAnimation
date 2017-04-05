@@ -23,17 +23,17 @@ public class AnimJieTi extends Anim {
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
 
-        float left1 = view.getWidth() - (rate*totalPaintTime - 0*timeInterval)/timePerLine *view.getWidth();
-        float top1 = view.getHeight()/lineNum *0;
-        float right1 = view.getWidth();
-        float bottom1 = top1 + view.getHeight() / lineNum;
+        float left1 = w - (rate*totalPaintTime - 0*timeInterval)/timePerLine *w;
+        float top1 = h/lineNum *0;
+        float right1 = w;
+        float bottom1 = top1 + h / lineNum;
         canvas.clipRect(left1, top1,right1,bottom1);
 
         for(int i = 1; i< lineNum; i++) {
-            float left = view.getWidth() - (rate*totalPaintTime - i*timeInterval)/timePerLine *view.getWidth();
-            float top = view.getHeight()/lineNum *i;
-            float right = view.getWidth();
-            float bottom = top + view.getHeight() / lineNum;
+            float left = w - (rate*totalPaintTime - i*timeInterval)/timePerLine *w;
+            float top = h/lineNum *i;
+            float right = w;
+            float bottom = top + h / lineNum;
             canvas.clipRect(left, top,right,bottom, Region.Op.UNION);
         }
 

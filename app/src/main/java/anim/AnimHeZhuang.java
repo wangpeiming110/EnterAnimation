@@ -16,10 +16,10 @@ public class AnimHeZhuang extends Anim {
 
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
-        float rectLeft =  (view.getWidth()/2 * rate);
-        float rectRight = view.getWidth() - rectLeft;
-        float rectTop = (view.getHeight()/2 * rate);
-        float rectBottom = view.getHeight() - rectTop;
+        float rectLeft =  (w/2 * rate);
+        float rectRight = w - rectLeft;
+        float rectTop = (h/2 * rate);
+        float rectBottom = h - rectTop;
 
         canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
 
