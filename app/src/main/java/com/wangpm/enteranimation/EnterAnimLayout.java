@@ -18,11 +18,7 @@ public class EnterAnimLayout extends FrameLayout {
     private Anim anim ;
     private long startTime = 0;//开始时间
     private boolean mIsAnimaionRun = false;
-    private boolean mIsVisibleAtFirst = false;
-    public void setAnim(Anim anim) {
-        this.anim = anim;
-    }
-
+    private boolean mIsVisibleAtFirst = true;
 
     public EnterAnimLayout(Context context) {
         super(context);
@@ -32,7 +28,7 @@ public class EnterAnimLayout extends FrameLayout {
     public EnterAnimLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray attribute = context.obtainStyledAttributes(attrs, R.styleable.EnterAnimLayout);
-        mIsVisibleAtFirst = attribute.getBoolean(R.styleable.EnterAnimLayout_isVisibleAtFirst, false);
+        mIsVisibleAtFirst = attribute.getBoolean(R.styleable.EnterAnimLayout_isVisibleAtFirst, true);
 
         attribute.recycle();
         initialize();
@@ -50,16 +46,26 @@ public class EnterAnimLayout extends FrameLayout {
     protected void initialize() {
     }
 
-    public void startAnimation() {
-        mIsAnimaionRun = true;
-        startTime = System.currentTimeMillis();
+    public void setAnim(Anim anim) {
+        this.anim = anim;
+    }
 
-        invalidate();
+    public long getStartTime() {
+        return startTime;
     }
-    public void startAnimation(long animTime) {
-        anim.totalPaintTime = animTime;
-        startAnimation();
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
+    public boolean ismIsAnimaionRun() {
+        return mIsAnimaionRun;
+    }
+
+    public void setmIsAnimaionRun(boolean mIsAnimaionRun) {
+        this.mIsAnimaionRun = mIsAnimaionRun;
+    }
+
+
 
     @Override
     protected void dispatchDraw(Canvas canvas) {

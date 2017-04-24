@@ -4,12 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimPiLie extends Anim {
-    public AnimPiLie(View view) {
+    public AnimPiLie(EnterAnimLayout view) {
         super(view);
     }
 

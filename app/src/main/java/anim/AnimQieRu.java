@@ -4,12 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimQieRu extends Anim {
-    public AnimQieRu(View view) {
+    public AnimQieRu(EnterAnimLayout view) {
         super(view);
     }
 

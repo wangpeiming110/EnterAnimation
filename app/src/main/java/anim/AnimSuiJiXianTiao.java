@@ -5,6 +5,8 @@ import android.graphics.Region;
 import android.util.Log;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 import java.util.Random;
 
 /**
@@ -16,7 +18,7 @@ public class AnimSuiJiXianTiao extends Anim {
     int restNum;
     Random random = new Random();
 
-    public AnimSuiJiXianTiao(View view) {
+    public AnimSuiJiXianTiao(EnterAnimLayout view) {
         super(view);
         lines = new int[(int) h];
         restNum = (int) h -1; //线条本身占据一像素高度

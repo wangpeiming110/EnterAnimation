@@ -5,12 +5,14 @@ import android.graphics.Path;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimLingXing extends Anim {
-    public AnimLingXing(View view) {
+    public AnimLingXing(EnterAnimLayout view) {
         super(view);
     }
     Path path1=new Path();

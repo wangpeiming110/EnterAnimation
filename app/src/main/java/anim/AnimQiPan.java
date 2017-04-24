@@ -4,12 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimQiPan extends Anim {
-    public AnimQiPan(View view) {
+    public AnimQiPan(EnterAnimLayout view) {
         super(view);
     }
 

@@ -4,12 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimShiZiXingKuoZhan extends Anim {
-    public AnimShiZiXingKuoZhan(View view) {
+    public AnimShiZiXingKuoZhan(EnterAnimLayout view) {
         super(view);
     }
 

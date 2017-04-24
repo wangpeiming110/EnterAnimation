@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 import java.util.Random;
 
 /**
@@ -21,7 +23,7 @@ public class AnimXiangNeiRongJie extends Anim {
     float ceilWidth;
     float ceilHeight;
 
-    public AnimXiangNeiRongJie(View view) {
+    public AnimXiangNeiRongJie(EnterAnimLayout view) {
         super(view);
         total = (int) (rowNum*colNum);
         ceils = new int[total];

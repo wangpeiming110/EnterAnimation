@@ -5,12 +5,14 @@ import android.graphics.Region;
 import android.util.Log;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimBaiYeChuang extends Anim {
-    public AnimBaiYeChuang(View view) {
+    public AnimBaiYeChuang(EnterAnimLayout view) {
         super(view);
     }
     float lines = 6;

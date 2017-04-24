@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.CheckBox;
 
+import anim.Anim;
 import anim.AnimBaiYeChuang;
 import anim.AnimCaChu;
 import anim.AnimHeZhuang;
@@ -22,8 +24,10 @@ import anim.AnimLingXing;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
+    private CheckBox mCheckBox;
 
     private EnterAnimLayout enterAnimLayout;
+    private EnterAnimLayout enterAnimRootView;
 
     private EnterAnimLayout animBaiyechuang;
     private EnterAnimLayout animCachu;
@@ -45,8 +49,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mCheckBox = (CheckBox) findViewById(R.id.check_box);
 
         enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
+        enterAnimRootView = (EnterAnimLayout)  findViewById(R.id.activity_main);
 
         animBaiyechuang = (EnterAnimLayout) findViewById(R.id.anim_baiyechuang);
         animCachu = (EnterAnimLayout) findViewById(R.id.anim_cachu);
@@ -66,8 +72,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                enterAnimLayout.setAnim(new AnimBaiYeChuang(enterAnimLayout));
-                enterAnimLayout.startAnimation();
+                Anim anim = new AnimBaiYeChuang(enterAnimLayout);
+                anim.startAnimation();
             }
         }, 1000);
 
@@ -89,91 +95,77 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Anim anim1 =null;
+        Anim anim2 =null;
+        EnterAnimLayout view1 = enterAnimLayout;
+        EnterAnimLayout view2 = (EnterAnimLayout) view.getParent();
+        if (mCheckBox.isChecked()) {
+            view1 = enterAnimRootView;
+        }
         switch (view.getId()) {
             case R.id.btn_baiyechuang:
-                enterAnimLayout.setAnim(new AnimBaiYeChuang(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animBaiyechuang.setAnim(new AnimBaiYeChuang(animBaiyechuang));
-                animBaiyechuang.startAnimation(2000);
+                anim1 = new AnimBaiYeChuang(view1);
+                anim2 = new AnimBaiYeChuang(view2);
                 break;
             case R.id.btn_cachu:
-                enterAnimLayout.setAnim(new AnimCaChu(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animCachu.setAnim(new AnimCaChu(animCachu));
-                animCachu.startAnimation(2000);
+                anim1 = new AnimCaChu(view1);
+                anim2 = new AnimCaChu(view2);
                 break;
             case R.id.btn_hezhuang:
-                enterAnimLayout.setAnim(new AnimHeZhuang(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animHezhuang.setAnim(new AnimHeZhuang(animHezhuang));
-                animHezhuang.startAnimation(2000);
+                anim1 = new AnimHeZhuang(view1);
+                anim2 = new AnimHeZhuang(view2);
                 break;
             case R.id.btn_jieti:
-                enterAnimLayout.setAnim(new AnimJieTi(enterAnimLayout));
-                enterAnimLayout.startAnimation(3000);
-                animJieti.setAnim(new AnimJieTi(animJieti));
-                animJieti.startAnimation(3000);
+                anim1 = new AnimJieTi(view1);
+                anim2 = new AnimJieTi(view2);
                 break;
             case R.id.btn_lingxing:
-                enterAnimLayout.setAnim(new AnimLingXing(enterAnimLayout));
-                enterAnimLayout.startAnimation(4000);
-                animLingxing.setAnim(new AnimLingXing(animLingxing));
-                animLingxing.startAnimation(4000);
+                anim1 = new AnimLingXing(view1);
+                anim2 = new AnimLingXing(view2);
                 break;
             case R.id.btn_lunzi:
-                enterAnimLayout.setAnim(new AnimLunZi(enterAnimLayout));
-                enterAnimLayout.startAnimation(1000);
-                animLunzi.setAnim(new AnimLunZi(animLunzi));
-                animLunzi.startAnimation(1000);
+                anim1 = new AnimLunZi(view1);
+                anim2 = new AnimLunZi(view2);
                 break;
             case R.id.btn_pilie:
-                enterAnimLayout.setAnim(new AnimPiLie(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animPilie.setAnim(new AnimPiLie(animPilie));
-                animPilie.startAnimation(2000);
+                anim1 = new AnimPiLie(view1);
+                anim2 = new AnimPiLie(view2);
                 break;
             case R.id.btn_qipan:
-                enterAnimLayout.setAnim(new AnimQiPan(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animQipan.setAnim(new AnimQiPan(animQipan));
-                animQipan.startAnimation(2000);
+                anim1 = new AnimQiPan(view1);
+                anim2 = new AnimQiPan(view2);
                 break;
             case R.id.btn_qieru:
-                enterAnimLayout.setAnim(new AnimQieRu(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animQieru.setAnim(new AnimQieRu(animQieru));
-                animQieru.startAnimation(2000);
+                anim1 = new AnimQieRu(view1);
+                anim2 = new AnimQieRu(view2);
                 break;
             case R.id.btn_shanxingzhankai:
-                enterAnimLayout.setAnim(new AnimShanXingZhanKai(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animShanxingzhankai.setAnim(new AnimShanXingZhanKai(animShanxingzhankai));
-                animShanxingzhankai.startAnimation(2000);
+                anim1 = new AnimShanXingZhanKai(view1);
+                anim2 = new AnimShanXingZhanKai(view2);
                 break;
             case R.id.btn_shizixingkuozhan:
-                enterAnimLayout.setAnim(new AnimShiZiXingKuoZhan(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animShizixingkuozhan.setAnim(new AnimShiZiXingKuoZhan(animShizixingkuozhan));
-                animShizixingkuozhan.startAnimation(2000);
+                anim1 = new AnimShiZiXingKuoZhan(view1);
+                anim2 = new AnimShiZiXingKuoZhan(view2);
                 break;
             case R.id.btn_suijixiantiao:
-                enterAnimLayout.setAnim(new AnimSuiJiXianTiao(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animSuijixiantiao.setAnim(new AnimSuiJiXianTiao(animSuijixiantiao));
-                animSuijixiantiao.startAnimation(2000);
+                anim1 = new AnimSuiJiXianTiao(view1);
+                anim2 = new AnimSuiJiXianTiao(view2);
                 break;
             case R.id.btn_xiangneirongjie:
-                enterAnimLayout.setAnim(new AnimXiangNeiRongJie(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animXiangneirongjie.setAnim(new AnimXiangNeiRongJie(animXiangneirongjie));
-                animXiangneirongjie.startAnimation(2000);
+                anim1 = new AnimXiangNeiRongJie(view1);
+                anim2 = new AnimXiangNeiRongJie(view2);
                 break;
             case R.id.btn_yuanxingkuozhan:
-                enterAnimLayout.setAnim(new AnimYuanXingKuoZhan(enterAnimLayout));
-                enterAnimLayout.startAnimation(2000);
-                animYuanxingkuozhan.setAnim(new AnimYuanXingKuoZhan(animYuanxingkuozhan));
-                animYuanxingkuozhan.startAnimation(2000);
+                anim1 = new AnimYuanXingKuoZhan(view1);
+                anim2 = new AnimYuanXingKuoZhan(view2);
                 break;
         }
+        if (mCheckBox.isChecked()) {
+            anim1.startAnimation(2000);
+        } else {
+            anim1.startAnimation(2000);
+            anim2.startAnimation(2000);
+        }
+
     }
 }

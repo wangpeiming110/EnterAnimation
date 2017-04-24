@@ -3,12 +3,14 @@ package anim;
 import android.graphics.Canvas;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimCaChu extends Anim {
-    public AnimCaChu(View view) {
+    public AnimCaChu(EnterAnimLayout view) {
         super(view);
     }
 

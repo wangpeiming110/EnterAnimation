@@ -5,12 +5,14 @@ import android.graphics.Region;
 import android.util.Log;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimJieTi extends Anim {
-    public AnimJieTi(View view) {
+    public AnimJieTi(EnterAnimLayout view) {
         super(view);
         timePerLine =  totalPaintTime - (timeInterval* (lineNum-1));
     }

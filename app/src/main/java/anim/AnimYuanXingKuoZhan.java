@@ -6,12 +6,14 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimYuanXingKuoZhan extends Anim {
-    public AnimYuanXingKuoZhan(View view) {
+    public AnimYuanXingKuoZhan(EnterAnimLayout view) {
         super(view);
 
     }

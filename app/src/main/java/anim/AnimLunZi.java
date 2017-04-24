@@ -6,12 +6,14 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.view.View;
 
+import com.wangpm.enteranimation.EnterAnimLayout;
+
 /**
  * Created by wpm on 2017/3/30.
  */
 
 public class AnimLunZi extends Anim {
-    public AnimLunZi(View view) {
+    public AnimLunZi(EnterAnimLayout view) {
         super(view);
         float r = (float) Math.sqrt(Math.pow(w, 2)+ Math.pow(h,2));
         oval = new RectF(w/2 -r , h/2-r, w+r-w/2, h+r-h/2);//以长方形对角线为边长的正方形
