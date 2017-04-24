@@ -88,6 +88,9 @@ public class EnterAnimLayout extends FrameLayout {
 
         if (rate < 1) {
             invalidate();
+        } else {
+            mIsAnimaionRun = false;
+            mIsVisibleAtFirst = true;
         }
     }
 }

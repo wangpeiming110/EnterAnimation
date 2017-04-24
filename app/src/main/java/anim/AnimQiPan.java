@@ -1,6 +1,7 @@
 package anim;
 
 import android.graphics.Canvas;
+import android.graphics.Path;
 import android.graphics.Region;
 import android.view.View;
 
@@ -19,10 +20,10 @@ public class AnimQiPan extends Anim {
     float colNum = 7;
 
 
+    Path path = new Path();
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
-        canvas.clipRect(0, 0,0,0);
-
+        path.reset();
         for(int i = 0; i< rowNum; i++) {
             float leftStart = i%2==0?0:-(w/colNum)/2 ;
             for(int j = 0;j < colNum+1;j++) {
@@ -30,10 +31,10 @@ public class AnimQiPan extends Anim {
                 float top = h/ rowNum *i;
                 float right = left+ w/colNum*rate;
                 float bottom = top + h / rowNum;
-                canvas.clipRect(left, top,right,bottom, Region.Op.UNION);
+                path.addRect(left, top,right,bottom, Path.Direction.CW);
             }
         }
-
+        canvas.clipPath(path);
         canvas.save();
     }
 }

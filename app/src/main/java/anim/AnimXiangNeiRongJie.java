@@ -1,6 +1,7 @@
 package anim;
 
 import android.graphics.Canvas;
+import android.graphics.Path;
 import android.graphics.Region;
 import android.view.View;
 
@@ -36,16 +37,17 @@ public class AnimXiangNeiRongJie extends Anim {
         }
     }
 
+    Path path = new Path();
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
+        path.reset();
         int needNum = (int) (total * rate - (total - restNum));//这一次绘制需要新增的随机数
-        canvas.clipRect(0, 0, 0, 0);
         for (int i = 0; i < needNum; i++)
         {
             int r = random.nextInt(restNum - i);
             float left = getLeft(ceils[r]);
             float top = getTop(ceils[r]);
-            canvas.clipRect(left, top, left+ceilWidth, top+ceilHeight, Region.Op.UNION);
+            path.addRect(left, top, left+ceilWidth, top+ceilHeight, Path.Direction.CW);
 
             int temp = ceils[r];
             ceils[r] = ceils[restNum - i - 1];
@@ -54,10 +56,11 @@ public class AnimXiangNeiRongJie extends Anim {
         for(int i = 0;i<total -restNum;i++) {
             float left = getLeft(ceils[total-1-i]);
             float top = getTop(ceils[total-1-i]);
-            canvas.clipRect(left, top, left+ceilWidth, top+ceilHeight, Region.Op.UNION);
+            path.addRect(left, top, left+ceilWidth, top+ceilHeight, Path.Direction.CW);
         }
 
         restNum = restNum - needNum;
+        canvas.clipPath(path);
         canvas.save();
     }
 

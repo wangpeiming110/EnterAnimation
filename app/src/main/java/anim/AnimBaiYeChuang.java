@@ -1,6 +1,7 @@
 package anim;
 
 import android.graphics.Canvas;
+import android.graphics.Path;
 import android.graphics.Region;
 import android.util.Log;
 import android.view.View;
@@ -17,14 +18,16 @@ public class AnimBaiYeChuang extends Anim {
     }
     float lines = 6;
 
+    Path path = new Path();
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
-        canvas.clipRect(0, 0, 0, 0);
+        path.reset();
         for(int i = 0;i<lines;i++) {
             float top = h / lines * i;
             float bottom = top + h / lines * rate;
-            canvas.clipRect(0, top, w, bottom, Region.Op.UNION);
+            path.addRect(0, top, w, bottom, Path.Direction.CW);
         }
+        canvas.clipPath(path);
         canvas.save();
     }
 }
