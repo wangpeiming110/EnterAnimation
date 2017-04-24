@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
 import com.wangpm.enteranimation.R;
@@ -92,5 +93,16 @@ public class EnterAnimLayout extends FrameLayout {
             mIsAnimaionRun = false;
             mIsVisibleAtFirst = true;
         }
+    }
+
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        //正在播放动画时点击才拦截
+        if (ev.getAction() == MotionEvent.ACTION_DOWN && mIsAnimaionRun == true) {
+            mIsAnimaionRun = false;
+            return true;
+        }
+        return super.onInterceptTouchEvent(ev);
     }
 }
