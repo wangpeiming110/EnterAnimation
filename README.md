@@ -1,5 +1,5 @@
 # EnterAnimation
-<img src='image/0.jpg' height='500px'/>
+<img src='image/0.png' height='500px'/>
 <img src='image/1.gif' height='300px'/>
 <img src='image/2.gif' height='300px'/>
 <img src='image/3.gif' height='300px'/>
