@@ -77,7 +77,7 @@ There are several attributes you can set:
 #### Activity: 
 
 ```java    
-        animBaiyechuang = (EnterAnimLayout) findViewById(R.id.anim_baiyechuang);
+        enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
 	    //oncreate中还并未获得view的具体尺寸，所以打开页面时延迟播放动画
         new Handler().postDelayed(new Runnable() {
             @Override
