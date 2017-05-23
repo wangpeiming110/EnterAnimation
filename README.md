@@ -6,6 +6,11 @@ android 仿ppt进入动画效果合集，
 适用于各种view和viewgroup，activity即用于页面根部viewgroup，
 自定义viewgroup自动换行layout，
 看效果图
+Series of entrance animation effects just like ppt in Android.
+There are effects of Blinds,Wipe,Box,Strips,Diamond,Wheel,Split,Checkerboard,Peek In,Wedge,Plus,Random Bars,Dissolve In,Circle.
+The Animation effects can apply to any View or ViewGroup.
+There is also a custom ViewGroup of auto linefeed called SimpleLineWrapLayout.
+look the images:
 
 <img src='image/1.gif' height='300px'> <img src='image/2.gif' height='300px'> <img src='image/3.gif' height='300px'/>
 <img src='image/4.gif' height='300px'> <img src='image/5.gif' height='300px'> <img src='image/6.gif' height='300px'/>
