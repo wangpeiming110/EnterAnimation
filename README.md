@@ -74,7 +74,7 @@ There are several attributes you can set:
         </com.wangpm.enteranimation.EnterAnimLayout>
 ```
 
-#### Activity: 
+#### java: 
 
 ```java    
         enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
