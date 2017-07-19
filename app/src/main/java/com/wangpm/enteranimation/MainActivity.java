@@ -29,22 +29,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private EnterAnimLayout enterAnimLayout;
     private EnterAnimLayout enterAnimRootView;
 
-    private EnterAnimLayout animBaiyechuang;
-    private EnterAnimLayout animCachu;
-    private EnterAnimLayout animHezhuang;
-    private EnterAnimLayout animJieti;
-    private EnterAnimLayout animLingxing;
-    private EnterAnimLayout animLunzi;
-    private EnterAnimLayout animPilie;
-    private EnterAnimLayout animQipan;
-    private EnterAnimLayout animQieru;
-    private EnterAnimLayout animShanxingzhankai;
-    private EnterAnimLayout animShizixingkuozhan;
-    private EnterAnimLayout animSuijixiantiao;
-    private EnterAnimLayout animXiangneirongjie;
-    private EnterAnimLayout animYuanxingkuozhan;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,21 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
         enterAnimRootView = (EnterAnimLayout)  findViewById(R.id.activity_main);
 
-        animBaiyechuang = (EnterAnimLayout) findViewById(R.id.anim_baiyechuang);
-        animCachu = (EnterAnimLayout) findViewById(R.id.anim_cachu);
-        animHezhuang = (EnterAnimLayout) findViewById(R.id.anim_hezhuang);
-        animJieti = (EnterAnimLayout) findViewById(R.id.anim_jieti);
-        animLingxing = (EnterAnimLayout) findViewById(R.id.anim_lingxing);
-        animLunzi = (EnterAnimLayout) findViewById(R.id.anim_lunzi);
-        animPilie = (EnterAnimLayout) findViewById(R.id.anim_pilie);
-        animQipan = (EnterAnimLayout) findViewById(R.id.anim_qipan);
-        animQieru = (EnterAnimLayout) findViewById(R.id.anim_qieru);
-        animShanxingzhankai = (EnterAnimLayout) findViewById(R.id.anim_shanxingzhankai);
-        animShizixingkuozhan = (EnterAnimLayout) findViewById(R.id.anim_shizixingkuozhan);
-        animSuijixiantiao = (EnterAnimLayout) findViewById(R.id.anim_suijixiantiao);
-        animXiangneirongjie = (EnterAnimLayout) findViewById(R.id.anim_xiangneirongjie);
-        animYuanxingkuozhan = (EnterAnimLayout) findViewById(R.id.anim_yuanxingkuozhan);
-
+        //打开页面时给anim_layout播放百叶窗效果
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -99,6 +69,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Anim anim2 =null;
         EnterAnimLayout view1 = enterAnimLayout;
         EnterAnimLayout view2 = (EnterAnimLayout) view.getParent();
+        //如果选中了checkbox，则播放整个页面，把activity的根view赋给view1，否则 view1为anim_layout
         if (mCheckBox.isChecked()) {
             view1 = enterAnimRootView;
         }
@@ -160,6 +131,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 anim2 = new AnimYuanXingKuoZhan(view2);
                 break;
         }
+        //如果选中了checkbox，则只播放anim1，anim1绑定的view为view1，view1之前赋值为acitivity的根view
+        //否则播放anim_layout和当前button的动画
+        //参数为动画播放总时间
         if (mCheckBox.isChecked()) {
             anim1.startAnimation(2000);
         } else {
