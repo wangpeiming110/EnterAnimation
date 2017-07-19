@@ -14,8 +14,8 @@ import java.util.Random;
  */
 
 public class AnimXiangNeiRongJie extends Anim {
-    private final int[] ceils;
-    int restNum;
+    private final int[] ceils; //格子数组
+    int restNum;//剩余格子数量
     Random random = new Random();
 
     int total ;
@@ -40,6 +40,7 @@ public class AnimXiangNeiRongJie extends Anim {
     Path path = new Path();
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
+        //与随机线条效果实现方式类似，可参照随机线条逻辑
         path.reset();
         int needNum = (int) (total * rate - (total - restNum));//这一次绘制需要新增的随机数
         for (int i = 0; i < needNum; i++)

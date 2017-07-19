@@ -24,6 +24,7 @@ public class AnimQiPan extends Anim {
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
         path.reset();
+        //根据行数和列数计算每一个格子区域，最后剪切出棋盘区域
         for(int i = 0; i< rowNum; i++) {
             float leftStart = i%2==0?0:-(w/colNum)/2 ;
             for(int j = 0;j < colNum+1;j++) {

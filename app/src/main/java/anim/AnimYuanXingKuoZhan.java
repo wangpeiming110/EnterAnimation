@@ -22,6 +22,7 @@ public class AnimYuanXingKuoZhan extends Anim {
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
         path1.reset();
+        //剪切canvas椭圆区域
         oval.set((float)(1-Math.sqrt(2)*(1-rate))*w/2,(float)(1-Math.sqrt(2)*(1-rate))*h/2,
                 (float)(1+Math.sqrt(2)*(1-rate))*w/2,(float)(1+Math.sqrt(2)*(1-rate))*h/2);
         path1.addOval(oval, Path.Direction.CCW);

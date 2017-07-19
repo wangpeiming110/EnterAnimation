@@ -21,6 +21,7 @@ public class AnimShanXingZhanKai extends Anim {
     RectF oval ;
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
+        //剪切扇形区域
         path1.reset();
         path1.addArc(oval,270-180*rate,360*rate);
         path1.lineTo(w/2,h/2);

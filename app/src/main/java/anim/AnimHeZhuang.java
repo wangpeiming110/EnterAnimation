@@ -23,6 +23,7 @@ public class AnimHeZhuang extends Anim {
         float rectTop = (h/2 * rate);
         float rectBottom = h - rectTop;
 
+        //剪切需要展示的区域
         canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
 
         canvas.save();

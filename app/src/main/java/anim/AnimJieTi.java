@@ -15,13 +15,14 @@ import com.wangpm.enteranimation.EnterAnimLayout;
 public class AnimJieTi extends Anim {
     public AnimJieTi(EnterAnimLayout view) {
         super(view);
+        //每一行从起跑到终点所需要的时间 = 总时间 - 第一行“等待”其他所有行跑完的时间
         timePerLine =  totalPaintTime - (timeInterval* (lineNum-1));
     }
 
-    float lineNum = 5;
-    float timeInterval = 200;
+    float lineNum = 5;//阶梯的行数
+    float timeInterval = 200;//每一行阶梯与上一行起跑时间差
 
-    float timePerLine;
+    float timePerLine;//每一行从起跑到终点所需要的时间
 
     Path path = new Path();
     @Override
@@ -35,6 +36,7 @@ public class AnimJieTi extends Anim {
 
         path.addRect(left1, top1,right1,bottom1, Path.Direction.CW);
 
+        //计算每一行需要展示的左上右下，最后一起剪切
         for(int i = 1; i< lineNum; i++) {
             float left = w - (rate*totalPaintTime - i*timeInterval)/timePerLine *w;
             float top = h/lineNum *i;

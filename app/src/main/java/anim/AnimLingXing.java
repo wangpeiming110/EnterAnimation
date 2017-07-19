@@ -19,6 +19,7 @@ public class AnimLingXing extends Anim {
 
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
+        //剪切出菱形区域
         path1.reset();
         path1.moveTo(w/2, -h/2+ h*rate);
         path1.lineTo(-w/2+w*rate, h/2);

@@ -22,6 +22,7 @@ public class AnimLunZi extends Anim {
     RectF oval ;
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
+        //剪切出扇形区域
         path1.reset();
         path1.addArc(oval,270,360*rate);
         path1.lineTo(w/2,h/2);

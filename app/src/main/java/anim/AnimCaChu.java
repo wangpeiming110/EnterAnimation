@@ -17,6 +17,7 @@ public class AnimCaChu extends Anim {
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
         float rectTop =  (h - h * rate);
+        //剪切当前需要展示区域的左上右下
         canvas.clipRect(0, rectTop, w, h);
 
         canvas.save();
