@@ -5,7 +5,13 @@ android 仿ppt进入动画效果合集，
 切入效果，扇形展开效果，十字扩展效果，随机线条效果，向内溶解效果，圆形扩展效果，
 适用于各种view和viewgroup，activity即用于页面根部viewgroup，
 自定义viewgroup自动换行layout，
-看效果图
+看效果图</br> 
+
+Series of entrance animation effects just like ppt in Android.
+There are effects of Blinds,Wipe,Box,Strips,Diamond,Wheel,Split,Checkerboard,Peek In,Wedge,Plus,Random Bars,Dissolve In,Circle.
+The Animation effects can apply to any View or ViewGroup.
+There is also a custom ViewGroup of auto linefeed called SimpleLineWrapLayout to layout the buttons.
+look the images:
 
 <img src='image/1.gif' height='300px'> <img src='image/2.gif' height='300px'> <img src='image/3.gif' height='300px'/>
 <img src='image/4.gif' height='300px'> <img src='image/5.gif' height='300px'> <img src='image/6.gif' height='300px'/>
@@ -68,10 +74,10 @@ There are several attributes you can set:
         </com.wangpm.enteranimation.EnterAnimLayout>
 ```
 
-#### Activity: 
+#### java: 
 
 ```java    
-        animBaiyechuang = (EnterAnimLayout) findViewById(R.id.anim_baiyechuang);
+        enterAnimLayout = (EnterAnimLayout)  findViewById(R.id.anim_layout);
 	    //oncreate中还并未获得view的具体尺寸，所以打开页面时延迟播放动画
         new Handler().postDelayed(new Runnable() {
             @Override
