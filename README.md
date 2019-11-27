@@ -8,7 +8,7 @@ android 仿ppt进入动画效果合集，
 看效果图</br> 
 
 Series of entrance animation effects just like ppt in Android.
-There are effects of Blinds,Wipe,Box,Strips,Diamond,Wheel,Split,Checkerboard,Peek In,Wedge,Plus,Random Bars,Dissolve In,Circle.
+There are effects of Blinds, Wipe, Box, Strips, Diamond, Wheel, Split, Checkerboard, Peek In, Wedge, Plus, Random Bars, Dissolve In, Circle.
 The Animation effects can apply to any View or ViewGroup.
 There is also a custom ViewGroup of auto linefeed called SimpleLineWrapLayout to layout the buttons.
 Please take a look at the images:
