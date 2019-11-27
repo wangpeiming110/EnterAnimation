@@ -11,7 +11,7 @@ Series of entrance animation effects just like ppt in Android.
 There are effects of Blinds,Wipe,Box,Strips,Diamond,Wheel,Split,Checkerboard,Peek In,Wedge,Plus,Random Bars,Dissolve In,Circle.
 The Animation effects can apply to any View or ViewGroup.
 There is also a custom ViewGroup of auto linefeed called SimpleLineWrapLayout to layout the buttons.
-look the images:
+Please take a look at the images:
 
 <img src='image/1.gif' height='300px'> <img src='image/2.gif' height='300px'> <img src='image/3.gif' height='300px'/>
 <img src='image/4.gif' height='300px'> <img src='image/5.gif' height='300px'> <img src='image/6.gif' height='300px'/>
