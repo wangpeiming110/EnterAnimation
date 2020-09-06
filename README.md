@@ -1,6 +1,6 @@
 # EnterAnimation
 
-android 仿ppt进入动画，入场动画效果合集，
+android 仿ppt进入/转场动画，入场动画效果合集，
 百叶窗效果，擦除效果，盒状效果，阶梯效果，菱形效果，轮子效果，劈裂效果，棋盘效果，
 切入效果，扇形展开效果，十字扩展效果，随机线条效果，向内溶解效果，圆形扩展效果，
 适用于各种view和viewgroup，activity即用于页面根部viewgroup，
