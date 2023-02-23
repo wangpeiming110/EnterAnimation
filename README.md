@@ -1,5 +1,4 @@
 # EnterAnimation
-
 android 仿ppt进入/转场动画，入场动画效果合集，
 百叶窗效果，擦除效果，盒状效果，阶梯效果，菱形效果，轮子效果，劈裂效果，棋盘效果，
 切入效果，扇形展开效果，十字扩展效果，随机线条效果，向内溶解效果，圆形扩展效果，
@@ -88,3 +87,9 @@ There are several attributes you can set:
             }
         }, 1000);
 ```
+
+# Release Notes
+## [2.0.0] - 2023-02-03
+### Change
+- Support exit animations [#8](/../../issues/8) [#7](/../../issues/7)[#6](/../../issues/6)[#2](/../../issues/2)
+- Fix interrupting active animation [#5](/../../issues/5)
