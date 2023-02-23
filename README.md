@@ -91,5 +91,8 @@ There are several attributes you can set:
 # Release Notes
 ## [2.0.0] - 2023-02-03
 ### Change
-- Support exit animations [#8](/../../issues/8) [#7](/../../issues/7) [#6](/../../issues/6) [#2](/../../issues/2)
+- Support exit animations of kinds of effects [#8](/../../issues/8) [#7](/../../issues/7) [#6](/../../issues/6) [#2](/../../issues/2)
 - Fix interrupting active animation [#5](/../../issues/5)
+
+## [1.0.0] - 2017-07-19
+- Support enter animations of kinds of effects
