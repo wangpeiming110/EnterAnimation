@@ -140,17 +140,15 @@ public class AnimActivity extends Activity implements View.OnClickListener {
                 anim2 = new AnimYuanXingKuoZhan(view2);
                 break;
         }
-        //如果选中了checkbox，则只播放anim1，anim1绑定的view为view1，view1之前赋值为acitivity的根view
-        //否则播放anim_layout和当前button的动画
-        //参数为动画播放总时间
+        // 是否设置为退出动画
         if (mCheckBoxIsExit.isChecked()){
             anim1.isExitAnim = true;
             anim2.isExitAnim = true;
         }
+        //如果选中了checkbox，则只播放anim1，anim1绑定的view为view1，view1之前赋值为activity的根view
+        //否则播放anim_layout和当前button的动画
+        //参数为动画播放总时间
         if (mCheckBoxApplyActivity.isChecked()) {
-            if(view1.isAnimationRun()){
-                return;
-            }
             anim1.startAnimation(2000);
         } else {
             anim1.startAnimation(2000);
