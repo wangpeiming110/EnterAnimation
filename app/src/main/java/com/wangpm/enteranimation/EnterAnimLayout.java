@@ -7,8 +7,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import com.wangpm.enteranimation.R;
-
 import anim.Anim;
 
 /**
@@ -18,7 +16,7 @@ import anim.Anim;
 public class EnterAnimLayout extends FrameLayout {
     private Anim anim ; //需要播放的动画类型
     private long startTime = 0;//开始时间
-    private boolean mIsAnimaionRun = false;//开始播放动画的标志位，设置为true，然后invalidate即开始播放动画
+    private boolean mIsAnimationRun = false;//开始播放动画的标志位，设置为true，然后invalidate即开始播放动画
     private boolean mIsVisibleAtFirst = true;//view所在页面打开时是否显示此view
 
     public EnterAnimLayout(Context context) {
@@ -58,12 +56,12 @@ public class EnterAnimLayout extends FrameLayout {
     public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
-    public boolean ismIsAnimaionRun() {
-        return mIsAnimaionRun;
+    public boolean isAnimationRun() {
+        return mIsAnimationRun;
     }
 
-    public void setmIsAnimaionRun(boolean mIsAnimaionRun) {
-        this.mIsAnimaionRun = mIsAnimaionRun;
+    public void setIsAnimationRun(boolean mIsAnimationRun) {
+        this.mIsAnimationRun = mIsAnimationRun;
     }
 
 
@@ -71,16 +69,16 @@ public class EnterAnimLayout extends FrameLayout {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         //如果设置了打开页面时正常显示，并且未设置播放动画，则正常分发draw
-        if (mIsVisibleAtFirst && !mIsAnimaionRun) {
+        if (mIsVisibleAtFirst && !mIsAnimationRun) {
             super.dispatchDraw(canvas);
             return;
         }
         //如果设置了打开页面时控件先不可见，并且未设置播放动画，则不分发draw
-        if (!mIsVisibleAtFirst && !mIsAnimaionRun) {
+        if (!mIsVisibleAtFirst && !mIsAnimationRun) {
             return;
         }
 
-        //mIsAnimaionRun 为true，播放动画，自定义分发draw
+        //mIsAnimationRun 为true，播放动画，自定义分发draw
 
         //计算动画已播放时间比率rate=（当前时间-动画开始时间）/总共需要播放的时间
         long currentTime = System.currentTimeMillis();
@@ -96,19 +94,19 @@ public class EnterAnimLayout extends FrameLayout {
         if (rate < 1) {
             invalidate();
         } else {
-            mIsAnimaionRun = false;
+            mIsAnimationRun = false;
             mIsVisibleAtFirst = true;
         }
     }
 
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //正在播放动画时点击才拦截
-        if (ev.getAction() == MotionEvent.ACTION_DOWN && mIsAnimaionRun == true) {
-            mIsAnimaionRun = false;
-            return true;
-        }
-        return super.onInterceptTouchEvent(ev);
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        //正在播放动画时点击才拦截
+//        if (ev.getAction() == MotionEvent.ACTION_DOWN && mIsAnimationRun == true) {
+//            mIsAnimationRun = false;
+//            return true;
+//        }
+//        return super.onInterceptTouchEvent(ev);
+//    }
 }

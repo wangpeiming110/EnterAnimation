@@ -27,8 +27,11 @@ public class AnimLunZi extends Anim {
         path1.addArc(oval,270,360*rate);
         path1.lineTo(w/2,h/2);
         path1.close();//封闭
-        canvas.clipPath(path1);
-
+        if(isExitAnim) {
+            canvas.clipPath(path1, Region.Op.DIFFERENCE);
+        }else{
+            canvas.clipPath(path1);
+        }
         canvas.save();
     }
 }

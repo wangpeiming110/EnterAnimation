@@ -1,6 +1,7 @@
 package anim;
 
 import android.graphics.Canvas;
+import android.graphics.Region;
 import android.view.View;
 
 import com.wangpm.enteranimation.EnterAnimLayout;
@@ -18,8 +19,11 @@ public class AnimCaChu extends Anim {
     public void handleCanvas(Canvas canvas, float rate) {
         float rectTop =  (h - h * rate);
         //剪切当前需要展示区域的左上右下
-        canvas.clipRect(0, rectTop, w, h);
-
+        if(isExitAnim) {
+            canvas.clipRect(0, rectTop, w, h, Region.Op.DIFFERENCE);
+        }else{
+            canvas.clipRect(0, rectTop, w, h);
+        }
         canvas.save();
     }
 }

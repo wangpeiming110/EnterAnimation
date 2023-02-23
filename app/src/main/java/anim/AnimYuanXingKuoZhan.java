@@ -28,7 +28,11 @@ public class AnimYuanXingKuoZhan extends Anim {
         path1.addOval(oval, Path.Direction.CCW);
 
         path1.close();//封闭
-        canvas.clipPath(path1, Region.Op.DIFFERENCE);
+        if(isExitAnim) {
+            canvas.clipPath(path1);
+        }else{
+            canvas.clipPath(path1, Region.Op.DIFFERENCE);
+        }
 
         canvas.save();
     }
