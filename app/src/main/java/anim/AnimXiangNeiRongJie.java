@@ -61,7 +61,11 @@ public class AnimXiangNeiRongJie extends Anim {
         }
 
         restNum = restNum - needNum;
-        canvas.clipPath(path);
+        if(isExitAnim) {
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+        }else{
+            canvas.clipPath(path);
+        }
         canvas.save();
     }
 

@@ -17,9 +17,11 @@ public class AnimQieRu extends Anim {
 
     @Override
     public void handleCanvas(Canvas canvas, float rate) {
-
-        canvas.translate(0,h-h*rate);
-
+        if(isExitAnim) {
+            canvas.translate(0,h*rate);
+        }else{
+            canvas.translate(0,h-h*rate);
+        }
         canvas.save();
     }
 }

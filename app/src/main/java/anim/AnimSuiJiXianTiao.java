@@ -56,7 +56,11 @@ public class AnimSuiJiXianTiao extends Anim {
 
         //剩余线条数量
         restNum = restNum - needNum;
-        canvas.clipPath(path);
+        if(isExitAnim) {
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+        }else{
+            canvas.clipPath(path);
+        }
         canvas.save();
     }
 

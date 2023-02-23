@@ -24,8 +24,11 @@ public class AnimHeZhuang extends Anim {
         float rectBottom = h - rectTop;
 
         //剪切需要展示的区域
-        canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
-
+        if(isExitAnim) {
+            canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom);
+        }else{
+            canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
+        }
         canvas.save();
     }
 }

@@ -35,7 +35,11 @@ public class AnimQiPan extends Anim {
                 path.addRect(left, top,right,bottom, Path.Direction.CW);
             }
         }
-        canvas.clipPath(path);
+        if(isExitAnim) {
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+        }else{
+            canvas.clipPath(path);
+        }
         canvas.save();
     }
 }

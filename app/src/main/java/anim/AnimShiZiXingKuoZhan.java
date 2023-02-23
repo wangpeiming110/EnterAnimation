@@ -26,9 +26,14 @@ public class AnimShiZiXingKuoZhan extends Anim {
         float rectRight1 = w-rectLeft1;
         float rectTop1 = 0;
         float rectBottom1 = h;
-        canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
-        canvas.clipRect(rectLeft1, rectTop1,rectRight1 , rectBottom1, Region.Op.DIFFERENCE);
 
+        if(isExitAnim) {
+            canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom);
+            canvas.clipRect(rectLeft1, rectTop1,rectRight1 , rectBottom1);
+        }else{
+            canvas.clipRect(rectLeft, rectTop,rectRight , rectBottom, Region.Op.DIFFERENCE);
+            canvas.clipRect(rectLeft1, rectTop1,rectRight1 , rectBottom1, Region.Op.DIFFERENCE);
+        }
         canvas.save();
     }
 }
