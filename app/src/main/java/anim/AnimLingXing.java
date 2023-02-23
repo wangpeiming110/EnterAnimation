@@ -26,7 +26,7 @@ public class AnimLingXing extends Anim {
         path1.lineTo(w/2, h+h/2 - h*rate);
         path1.lineTo(w+w/2 -w*rate, h/2);
         path1.close();//封闭
-        canvas.clipPath(path1, Region.Op.XOR);
+        canvas.clipPath(path1, Region.Op.DIFFERENCE);
 
         canvas.save();
     }
