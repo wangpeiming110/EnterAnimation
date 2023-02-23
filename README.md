@@ -6,7 +6,7 @@ android 仿ppt进入/退出/转场动画，入场/出场动画效果合集，
 自定义viewgroup自动换行layout，
 看效果图</br> 
 
-Series of entrance animation effects just like ppt in Android.
+Series of entry/exit animation effects just like ppt in Android.
 There are effects of Blinds, Wipe, Box, Strips, Diamond, Wheel, Split, Checkerboard, Peek In, Wedge, Plus, Random Bars, Dissolve In, Circle.
 The Animation effects can apply to any View or ViewGroup.
 There is also a custom ViewGroup of auto linefeed called SimpleLineWrapLayout to layout the buttons.
